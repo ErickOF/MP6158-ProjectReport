@@ -8,7 +8,7 @@ Crear un nuevo layout haciendo click derecho sobre la carpeta del proyecto, sele
 
 Abrir el archivo creado. Haciendo uso de la librería de \texttt{TLines-Microstrip}, utilizar el elemento \texttt{MLIN} para formar las secciones del filtro, esto se puede observar en la Figura \ref{fig:metologia_mlin}. 
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=8cm]{figures/metodologia/metologia1.png}
     \caption{Parte utilizada para dibujar las secciones del filtro}
@@ -17,7 +17,7 @@ Abrir el archivo creado. Haciendo uso de la librería de \texttt{TLines-Microstr
 
 Colocar el elemento en el área de trabajo demarcado por la zona oscura. Una vez colocado el elemento, darle doble click izquierdo para abrir el panel de parámetros que se puede observar en la Figura \ref{fig:metologia_mlin_dimensiones}.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=8cm]{figures/metodologia/metologia2.png}
     \caption{Panel de parámetros del elemento \texttt{MLIN}}
@@ -26,7 +26,7 @@ Colocar el elemento en el área de trabajo demarcado por la zona oscura. Una vez
 
 Con los pasos mencionados anteriormente, inserte las secciones necesarias utilizando los datos mostrados en la tabla \ref{table:metodologia_dimensiones} hasta formar la estructura mostrada en la figura \ref{fig:metologia_secciones_filtro}, donde el ancho corresponde al parámetro \texttt{W} y el largo a \texttt{L}.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \caption{Dimensiones de las secciones del filtro}
 \label{table:metodologia_dimensiones}
@@ -42,7 +42,7 @@ TL6     & 2.9            & 4.5            \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=8cm]{figures/metodologia/metologia3.png}
     \caption{Secciones del filtro}
@@ -56,14 +56,14 @@ Una vez completada la estructura del filtro, puede proceder a agregar los pines 
 Crear un nuevo substrato haciendo click derecho sobre la carpeta del proyecto, seleccionar la opción \texttt{New substrate}. \\
 
 Modifique el substrato para que se vea como el mostrado en la figura \ref{fig:metologia_substrato}. La capa del dieléctrico debe tener una constante de permeabilidad de 4.6, una tangente de pérdidas de $0.0023$, y un espesor de 1.6mm.
-\begin{figure}[h!]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=8cm]{figures/metodologia/metologia4.png}
     \caption{Capas del substrato}
     \label{fig:metologia_substrato}
 \end{figure}
 
-\subsection{Simulación electromágnetica}
+\subsection{Simulación electromagnética}
 
 Haga click derecho sobre la carpeta que contiene el layout y seleccione la opción \texttt{New} y posteriormente \texttt{EmSetup}. Seleccione con doble click el archivo creado.
-En la pestaña de \texttt{Ports} refresce la información utilizando las 2 flechas verdes en la parte superior izquierda de la ventana. Posteriormente, regrese a la pestaña \texttt{FEM} y seleccione el tipo de simulación \texttt{EM Simulation/Model} utilizando el simulador \texttt{FEM}. En la parte inferior derecha selecciona la opción para generar parámetros y precione el botón \texttt{Simulate}.
+En la pestaña de \texttt{Ports} refresque la información utilizando las 2 flechas verdes en la parte superior izquierda de la ventana. Posteriormente, regrese a la pestaña \texttt{FEM} y seleccione el tipo de simulación \texttt{EM Simulation/Model} utilizando el simulador \texttt{FEM}. En la parte inferior derecha selecciona la opción para generar parámetros y presione el botón \texttt{Simulate}.
