@@ -1,6 +1,6 @@
 \section{Discusión}
+La frecuencia de corte de 3dB del filtro diseñado ha experimentado un cambio a 1.68 GHz en lugar de los deseados 2 GHz, debido a las limitaciones de los cálculos teóricos. Estos no consideraron con precisión los efectos de extremo abierto y los cambios repentinos de impedancia en las líneas de transmisión.  \\
 
-% Incongruencia entre el grosor del dielectrico porque en la página 37
-% viene que el height del material es 4.6 mm pero en la imagen que ponen
-% abajo dice que es 1.6. Las gráficas usando 1.6 dan un resultado similar
-% a los que vienen en el documento.
+Para abordar este inconveniente y restablecer la frecuencia de corte a los 2 GHz deseados, es crucial optimizar las longitudes de las líneas de transmisión. Este proceso puede llevarse a cabo mediante el simulador Momentum en ADS o a través de un barrido paramétrico en las longitudes de las líneas capacitivas e inductivas. \\
+
+El simulador Momentum ofrece una modelización precisa de los efectos de las líneas de transmisión, incluyendo los efectos de extremo abierto y los cambios de impedancia. Además, se puede llevar a cabo una optimización de parámetros mediante un barrido de parámetros en ADS, variando las longitudes de las líneas capacitivas e inductivas dentro de un rango de valores determinado. Esto permitirá analizar el impacto de las diferentes longitudes de línea en la respuesta de frecuencia del filtro. \\
