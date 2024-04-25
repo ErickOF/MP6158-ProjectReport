@@ -1,2 +1,78 @@
 \section{Teoría}
+Un filtro se puede descibir como una red reactiva que pasa una banda de frecuencias deseada mientras practicamente rechaza las otras bandas de frecuencias, lo que quiere decir que procesa sañales de forma dependiente de la frecuencia~\cite{zumbahlen2008581}. Una característica importante es la frecuencia de corte ($f_{c}$), la cual es la frecuencia que separa la banda de transmisión de la banda de atenuación. Los filtros pueden clasificarse en pasa altas, pasa bajas, pasa banda y rechaza banda~\cite{keysight_csc2}. \\
 
+El primer paso es seleccionar una aproximación apropiada del prototipo del modelo basado en las especificaciones. El orden se puede calcular:
+
+\subsection*{Aproximación de Butterworth}
+\begin{equation}
+    L_{A}(\omega^{'}) = 10 log_{10} \left\{1 + \varepsilon \left( \omega^{'} / \omega_{c} \right)^{2N} \right\}
+\end{equation}
+
+donde $\varepsilon = \left\{ Antilog_{10} \right( L_{A} / 10 \left) \right\}$ y $L_{A} = 3$db para Butterworth.
+
+
+\subsection*{Aproximación de Chebyshev}
+\begin{equation}
+    L_{A}(\omega^{'}) =
+    \begin{cases}
+        10 log_{10} \left[ 1 + \varepsilon cos^{2} \left( ncos^{-1} \frac{\omega^{'}}{\omega_{c}} \right)^{2N} \right] & \omega^{'} \leq \omega^{'}_{1} \\
+        10 log_{10} \left[ 1 + \varepsilon cosh^{2} \left( ncosh^{-1} \frac{\omega^{'}}{\omega_{c}} \right)^{2N} \right] & \omega^{'} \geq \omega^{'}_{1} \\
+    \end{cases}
+\end{equation}
+
+donde $\omega_{c}$ es la frecuencia angular de corte, $\omega^{'}$ es la frecuencia angular de atenuación, $L_{A}(\omega^{'})$ es la atenuación en $\omega^{'}$, $N$ es el orden del filtro, $\varepsilon = [Antilog_{10} ( L_{Ar} / 10)] - 1$ y $L_{Ar}$ es igual a la ondulación en la banda de paso. \\
+
+Posteriormente, se calculan los valores del filtro dependiendo del tipo de aproximación.
+
+
+\subsection*{Aproximación de Butterworth}
+\begin{subequations}
+    \begin{align}
+        & g_{0} = 1 \\
+        & g_{k} = 2 sin\left\{ \right( 2k - 1 \left) \pi / 2n \right\}~donde~k=1,2,...n \\
+        & g_{N + 1} = 1
+    \end{align}
+\end{subequations}
+
+
+\subsection*{Aproximación de Chebyshev}
+\begin{subequations}
+    \begin{align}
+        & \beta = ln \left( coth \frac{L_{Ar}}{17.37} \right) \\
+        & \gamma = sinh \left( \frac{\beta}{2n} \right) \\
+        & a_{k} = sin\left( \frac{2^{k} - \pi}{2n} \right),~k=1,2,3,...,n \\
+        & b_{k} = \gamma^{2} + sin^{2}\left( \frac{k \pi}{n} \right),~k=1,2,3,...,n \\
+        & g_{1} = \frac{2 a_{1}}{\gamma} \\
+        & g_{k} = \frac{4 a_{k - 1} a_{k}}{b_{k - 1} g_{k - 1}},~k=2,3,...,n \\
+        & g_{n+1} =
+        \begin{cases}
+            1 & odd~n \\
+            coth^2(\frac{\beta}{4}) & even~n
+        \end{cases}
+    \end{align}
+\end{subequations}
+
+Después de obtener los valores de filtro, se debe hacer la correspondinte transformación de la frecuencia y la impedancia para cumplir con las especificaciones. Los transformaciones se pueden realizar con las siguientes ecuaciones:
+
+\subsection*{Filtro pasa bajas}
+\begin{subequations}
+    \begin{align}
+        & C_{k}^{'} = C_{k} / R_{0} \omega_{c} \\
+        & L_{k}^{'} = R_{0} L_{k} / \omega_{c},~donde~R_{0} = 50 \Omega
+    \end{align}
+\end{subequations}
+
+
+\subsection*{Filtro pasa bandas}
+\begin{subequations}
+    \begin{align}
+        & L_{1}^{'} = L_{1} Z_{0} / \omega_{0} \Delta \\
+        & C_{1}^{'} = \Delta / L_{1} Z_{0} \omega_{0} \\
+        & L_{2}^{'} = \Delta Z_{0} / \omega_{0} C_{2} \\
+        & C_{2}^{'} = C_{2} / Z_{0} \Delta \omega_{0} \\
+        & L_{3}^{'} = L_{3} Z_{0} / \omega_{0} \Delta \\
+        & C_{3}^{'} = \Delta / L_{3} Z_{0}  \omega_{0}
+    \end{align}
+\end{subequations}
+
+donde $\Delta$ es el ancho de banda fraccional $\Delta = (\omega_{2} - \omega_{1}) / \omega_{0}$. \\

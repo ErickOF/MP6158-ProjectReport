@@ -1,12 +1,12 @@
 \section{Metodología}
 
-Para la creación del filtro, se siguieron los pasos de la guía \textit{Advanced Design System-Circuit Design Cookbook 2.0. Keysight Technologies}~\cite{keysight_csc2}.
+Para la creación del filtro, se siguieron los pasos de la guía \textit{Advanced Design System-Circuit Design Cookbook 2.0. Keysight Technologies}~\cite{keysight_csc2}. \\
 
 \subsection{Creación del layout}
 
 Crear un nuevo layout haciendo click derecho sobre la carpeta del proyecto, seleccionar la opción \texttt{New layout}. \\
 
-Abrir el archivo creado. Haciendo uso de la librería de \texttt{TLines-Microstrip}, utilizar el elemento \texttt{MLIN} para formar las secciones del filtro, esto se puede observar en la Figura \ref{fig:metologia_mlin}. 
+Abrir el archivo creado. Haciendo uso de la librería de \texttt{TLines-Microstrip}, utilizar el elemento \texttt{MLIN} para formar las secciones del filtro, esto se puede observar en la Figura \ref{fig:metologia_mlin}.  \\
 
 \begin{figure}[!ht]
     \centering
@@ -15,7 +15,7 @@ Abrir el archivo creado. Haciendo uso de la librería de \texttt{TLines-Microstr
     \label{fig:metologia_mlin}
 \end{figure}
 
-Colocar el elemento en el área de trabajo demarcado por la zona oscura. Una vez colocado el elemento, darle doble click izquierdo para abrir el panel de parámetros que se puede observar en la Figura \ref{fig:metologia_mlin_dimensiones}.
+Colocar el elemento en el área de trabajo demarcado por la zona oscura. Una vez colocado el elemento, darle doble click izquierdo para abrir el panel de parámetros que se puede observar en la Figura \ref{fig:metologia_mlin_dimensiones}. \\
 
 \begin{figure}[!ht]
     \centering
@@ -24,7 +24,7 @@ Colocar el elemento en el área de trabajo demarcado por la zona oscura. Una vez
     \label{fig:metologia_mlin_dimensiones}
 \end{figure}
 
-Con los pasos mencionados anteriormente, inserte las secciones necesarias utilizando los datos mostrados en la tabla \ref{table:metodologia_dimensiones} hasta formar la estructura mostrada en la figura \ref{fig:metologia_secciones_filtro}, donde el ancho corresponde al parámetro \texttt{W} y el largo a \texttt{L}.
+Con los pasos mencionados anteriormente, inserte las secciones necesarias utilizando los datos mostrados en la tabla \ref{table:metodologia_dimensiones} hasta formar la estructura mostrada en la figura \ref{fig:metologia_secciones_filtro}, donde el ancho corresponde al parámetro \texttt{W} y el largo a \texttt{L}. \\
 
 \begin{table}[!ht]
 \centering
@@ -49,13 +49,13 @@ TL6     & 2.9            & 4.5            \\ \hline
     \label{fig:metologia_secciones_filtro}
 \end{figure}
 
-Una vez completada la estructura del filtro, puede proceder a agregar los pines para la simulación \texttt{EM}, para eso haga click en \texttt{Insert} y seleccione la opción \texttt{Pin}. Coloque uno en la conexión restante de \texttt{TL1} y otro en la conexión restante de \texttt{TL6}.
+Una vez completada la estructura del filtro, puede proceder a agregar los pines para la simulación \texttt{EM}, para eso haga click en \texttt{Insert} y seleccione la opción \texttt{Pin}. Coloque uno en la conexión restante de \texttt{TL1} y otro en la conexión restante de \texttt{TL6}. \\
 
 \subsection{Creación del substrato}
 
 Crear un nuevo substrato haciendo click derecho sobre la carpeta del proyecto, seleccionar la opción \texttt{New substrate}. \\
 
-Modifique el substrato para que se vea como el mostrado en la figura \ref{fig:metologia_substrato}. La capa del dieléctrico debe tener una constante de permeabilidad de 4.6, una tangente de pérdidas de $0.0023$, y un espesor de 1.6mm.
+Modifique el substrato para que se vea como el mostrado en la figura \ref{fig:metologia_substrato}. La capa del dieléctrico debe tener una constante de permeabilidad de 4.6, una tangente de pérdidas de $0.0023$, y un espesor de 1.6mm. \\
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=8cm]{figures/metodologia/metologia4.png}
